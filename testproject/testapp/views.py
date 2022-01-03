@@ -7,5 +7,6 @@ def hello_world(request):
 
 def hello_name(request, name):
    template = loader.get_template('testapp/helloname.html')
+   name = list(name)
    context = {'name':name}
    return HttpResponse(template.render(context, request))
